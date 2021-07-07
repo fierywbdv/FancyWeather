@@ -1,12 +1,12 @@
-// import translateWord from './translateWord';
+import translateWord from './translateWord';
 import interfaceConfig from './controlConfig';
 
 const drawInterfaceInfo = async (language, city, country, lat, lng) => {
   document.querySelector('.search-input').placeholder = `${interfaceConfig.searchPlaceholder[language]}`;
   document.querySelector('.search-button').innerHTML = `${interfaceConfig.search[language]}`;
-  // const cityName = await translateWord(city, language);
-  // const countryName = await translateWord(country, language);
-  document.querySelector('.weather-card_city').innerHTML = `${city},${country}`;
+  const cityName = await translateWord(city, language);
+  const countryName = await translateWord(country, language);
+  document.querySelector('.weather-card_city').innerHTML = `${cityName},${countryName}`;
 
   document.querySelector('.coordinates-block').innerHTML = `
     <span class="coordinates-text"> 
