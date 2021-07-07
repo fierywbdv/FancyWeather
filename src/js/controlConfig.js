@@ -1,0 +1,113 @@
+const interfaceConfig = {
+  search: {
+    en: 'Search',
+    ru: 'Поиск',
+    be: 'Пошук',
+  },
+  searchPlaceholder: {
+    en: 'Search city',
+    ru: 'Искать город',
+    be: 'Шукаць горад',
+  },
+  latitude: {
+    en: 'Latitude',
+    ru: 'Широта',
+    be: 'Шырата',
+  },
+  longitude: {
+    en: 'Longitude',
+    ru: 'Долгота',
+    be: 'Даўгата',
+  },
+  weatherDescription: {
+    en: 'Description',
+    ru: 'Описание',
+    be: 'Апісанне',
+  },
+  sound: {
+    en: 'Today the temperarure is',
+    ru: 'Сегодня температура',
+    be: 'Сення тэмпература',
+  },
+  degree: {
+    en: 'Degrees',
+    ru: 'Градусов',
+    be: 'Градусау',
+  },
+  feelsLike: {
+    en: 'Feels like',
+    ru: 'По ощущению',
+    be: 'Па адчуванні',
+  },
+  wind: {
+    en: 'Wind',
+    ru: 'Ветер',
+    be: 'Вецер',
+  },
+  windSpeed: {
+    en: 'm/s',
+    ru: 'м/c',
+    be: 'м/с',
+  },
+  windWord: {
+    en: 'meter in second',
+    ru: 'метр в секунду',
+    be: 'метр у сякунду',
+  },
+  humidity: {
+    en: 'Humidity',
+    ru: 'Влажность',
+    be: 'Вільготнасць',
+  },
+  weekDays: {
+    en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    ru: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+    be: ['Нядзеля', 'Панядзелак', 'Аўторак', 'Серада', 'Чацьвер', 'Пятніца', 'Субота'],
+  },
+  month: {
+    en: [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ],
+    ru: [
+      'Января',
+      'Февраля',
+      'Марта',
+      'Апреля',
+      'Мая',
+      'Июня',
+      'Июля',
+      'Августа',
+      'Сентября',
+      'Октября',
+      'Ноября',
+      'Декабря',
+    ],
+    be: [
+      'Студзеня',
+      'Лютага',
+      'Сакавiка',
+      'Красавiка',
+      'Мая',
+      'Червеня',
+      'Лiпеня',
+      'Жнiўня',
+      'Верасня',
+      'Кастрычнiка',
+      'Лiстапада',
+      'Снежня',
+    ],
+  },
+};
+
+export default interfaceConfig;

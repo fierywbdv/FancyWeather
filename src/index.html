@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.0/mapbox-gl.css' rel='stylesheet' />
+    <title>fancy-weather</title>
+</head>
+<body class="body" id="body">
+    <div class="background"></div>
+    <header class="header-container wrapper">
+        <div class="controls-panel">
+            <button class="switch-image control_element"></button>
+            <select class="switch-language control_element">
+                <option value="1">EN</option>
+                <option value="2">RU</option>
+                <option value="3">BE</option>
+            </select>
+            <div class="onoffswitch">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="checkboxMode" checked="checked">
+                <label class="onoffswitch-label" for="checkboxMode">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
+            </div>
+            <div class="calender-image control_element">
+            </div>
+            <div class="funny-wrapper inactive"> 
+                <div>
+                    <div>
+                        <table id="calendar"  cellspacing="0" cellpadding="1">
+                            <thead>
+                                <tr><td><b>‹</b><td colspan="5"><td><b>›</b>
+                                <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-container">
+            <input class="search-input" id="idSearchField" type="text" placeholder="Search city">
+            <button class="search-button">Search</button>
+            <span class="voice-button"></span>
+            <span class="control-button"></span>
+        </div>
+    </header>
+
+
+    <section class="active-container">
+        <div class="message-wrapper"> </div>
+    </section>
+
+    <main class="main-container wrapper">
+        <div class="weather_container">
+            <div class="weather-today">
+                <div class="weather-card">
+                    <p class="weather-card_city"></p>
+                    <p class="weather-card_day"></p>
+                    <div class="weather-card-details-block">
+                        <p class="weather-card_temp"></p>
+                        <div class="weather-card-extended-info-block" id="">
+                            <img class="weather-card_icon">
+                            <p class="weather-card_info" id=""></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weather-future">                
+            </div>
+        </div>
+        <div class="map-container">
+
+           <div id="map" class="map">
+           </div>
+
+            <div class="coordinates-block">
+            </div>
+        </div>
+    </main>
+</body>
+</html>
