@@ -39,9 +39,6 @@ export default async function translateWord(word, lang) {
     } else {
       wordLang = 'be';
     }
-
-    console.log(wordLang, lang);
-
     if (wordLang !== lang) {
       const res = await fetch(
         `https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?q=${word}&langpair=${wordLang}|${lang}`,
