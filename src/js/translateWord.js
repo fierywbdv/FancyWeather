@@ -1,7 +1,3 @@
-import DetectLanguage from 'detectlanguage';
-
-const detectlanguage = new DetectLanguage('cce8b11d00b9fd4aa41ebb5f2b6fab39');
-
 const message = document.querySelector('.message-wrapper');
 // -----------------переводчик с автоопределением языка----------------
 // export default async function translateWord(word, lang) {
@@ -35,32 +31,34 @@ const message = document.querySelector('.message-wrapper');
 // ---------------------------------------------------------------------------
 export default async function translateWord(word, lang) {
   try {
-    const data = detectlanguage.detect(word).then(async (result) => {
-      let wordLang = '';
-      if (word === 'Беларусь') {
-        wordLang = 'ru';
-      } else {
-        wordLang = JSON.stringify(result[0].language).slice(1, 3);
-      }
-      if (wordLang !== lang) {
-        const res = await fetch(
-          `https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?q=${word}&langpair=${wordLang}|${lang}`,
-          {
-            method: 'GET',
-            headers: {
-              'x-rapidapi-key':
-                '8c7a62bd09msha0fcd2de5032f4ap1e9fbdjsncf7dd3c862f8',
-              'x-rapidapi-host':
-                'translated-mymemory---translation-memory.p.rapidapi.com',
-            },
+    let wordLang = '';
+    if (word.match(/[а-яА-Я]/) || word === 'Беларусь') {
+      wordLang = 'ru';
+    } else if (word.match(/[a-zA-Z]/)) {
+      wordLang = 'en';
+    } else {
+      wordLang = 'be';
+    }
+
+    console.log(wordLang, lang);
+
+    if (wordLang !== lang) {
+      const res = await fetch(
+        `https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?q=${word}&langpair=${wordLang}|${lang}`,
+        {
+          method: 'GET',
+          headers: {
+            'x-rapidapi-key':
+              '8c7a62bd09msha0fcd2de5032f4ap1e9fbdjsncf7dd3c862f8',
+            'x-rapidapi-host':
+              'translated-mymemory---translation-memory.p.rapidapi.com',
           },
-        );
-        const data1 = await res.json();
-        return data1.responseData.translatedText;
-      }
-      return word;
-    });
-    return data;
+        },
+      );
+      const data1 = await res.json();
+      return data1.responseData.translatedText;
+    }
+    return word;
   } catch (err) {
     message.innerText = `ERROR CATCH(${err.code}): ${err.message}`;
     console.warn(`ERROR CATCH(${err.code}): ${err.message}`);
