@@ -1,7 +1,7 @@
 import state from './state';
 
 const message = document.querySelector('.message-wrapper');
-const geoDataKey = '41aa6c2782d542e6acc9e748d27c6b4c';
+const geoDataKey = 'feb6bcc4e0bc4c95a0886ea74b870385';
 export default async function getGeoData(parameter) {
   try {
     const url = `https://api.opencagedata.com/geocode/v1/json?q=${parameter}&key=${geoDataKey}&pretty=1`;

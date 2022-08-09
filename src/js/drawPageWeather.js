@@ -1,7 +1,7 @@
 import drawWeatherCard from './drawWeatherCard';
 import drawInterfaceInfo from './drawInterfaceInfo';
 
-const weathwebitKey = '9620ed77b6df446c8a7e884a0e3ad064';
+const weathwebitKey = '31249ef7ee2e4650b41176858106fd7b';
 const message = document.querySelector('.message-wrapper');
 export default async function drawPageWeather(language, coords, city, country) {
   try {
